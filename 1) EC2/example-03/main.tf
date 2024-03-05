@@ -54,7 +54,7 @@ resource "aws_instance" "instance_example_03" {
 
 #We create an elastic IP and associate it with the instance.
 resource "aws_eip" "elastic_ip" {
-    instance = aws_instance.instance_example_03.id
+  instance = aws_instance.instance_example_03.id
 }
 
 

@@ -41,7 +41,7 @@ resource "aws_security_group" "sg_example_04" {
 }
 
 #we create an EC2 instance
-resource "aws_instance" "instance_example_03" {
+resource "aws_instance" "instance_example_04" {
   ami             = "ami-00874d747dde814fa"
   instance_type   = "t2.small"
   key_name        = "vockey"
@@ -56,7 +56,7 @@ resource "aws_instance" "instance_example_03" {
 
 #We create an elastic IP and associate it with the instance.
 resource "aws_eip" "elastic_ip" {
-    instance = aws_instance.instance_example_04.id
+  instance = aws_instance.instance_example_04.id
 }
 
 
