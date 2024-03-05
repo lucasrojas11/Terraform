@@ -41,19 +41,24 @@ resource "aws_security_group" "sg_example_02" {
 }
 
 #we create an EC2 instance
-resource "aws_instance" "instance_example_02" {
+resource "aws_instance" "instance_example_03" {
   ami             = "ami-00874d747dde814fa"
   instance_type   = "t2.small"
   key_name        = "vockey"
   security_groups = [aws_security_group.sg_example_02.name]
 
   tags = {
-    Name = "instance_example_02"
+    Name = "instance_example_03"
   }
+}
+
+#We create an elastic IP and associate it with the instance.
+resource "aws_eip" "elastic_ip" {
+    instance = aws_instance.instance_example_03.id
 }
 
 
 #We create an output variable with the instance's public IP.
 output "public_ip" {
-  value = aws.instance.instance_example_02.public_ip
+  value = aws.instance.instance_example_03.public_ip
 }
