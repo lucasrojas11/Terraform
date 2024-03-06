@@ -1,13 +1,16 @@
 # Amazon EC2
 ## What is EC2?
 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) is a cloud computing service offered by Amazon Web Services (AWS). It allows users to rent virtual machines in the cloud, known as EC2 instances, and run applications on them. These instances can be configured according to the user's needs in terms of processing power, memory, storage, and other resources.
+![](../images/ec2-basic-arch.png)
 
 **Here are some features or configurations for EC2 instances.**
 ## EBS
 Amazon [Elastic Block Store](https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html) (Amazon EBS) is a service that provides scalable and high-performance block storage resources for use with EC2 instances. It allows users to create and manage storage volumes (Amazon EBS volumes) that can be attached to EC2 instances, similar to local hard drives, and snapshots of these volumes for backups. Amazon EBS offers multiple volume types, scalability options, backup and recovery features, data protection through encryption, data availability and durability guarantees, as well as data archiving capabilities.
 
 ## Security Groups
+![](../images/security-group-overview.png)
 [Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) in AWS are used to control the inbound and outbound traffic for associated resources within a Virtual Private Cloud (VPC). When a security group is assigned to an EC2 instance, it acts as a virtual firewall, allowing only traffic that complies with the defined rules to reach the instance. These rules specify the allowed source, port range, and protocol for inbound traffic, as well as the destination, port range, and protocol for outbound traffic. Security groups are stateful, meaning that response traffic for allowed requests is permitted regardless of the inbound rules. However, security groups do not filter certain types of traffic like DNS, DHCP, or metadata requests.
+![](../images/security-group-details.png)
 In summary, security groups play a crucial role in controlling traffic to AWS resources within a VPC by defining rules for inbound and outbound traffic based on specified criteria such as source, destination, port range, and protocol. Following best practices when configuring security groups helps enhance the security posture of AWS environments.
 
 ## Elastic IP
